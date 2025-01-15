@@ -37,6 +37,7 @@ class BookingFragment : Fragment() {
         totalTimeTextBooking.text = totalTime.toString()
 
         // Minus button click listener
+        
         minusButton.setOnClickListener {
             if (totalTime > 1) {
                 totalTime--
