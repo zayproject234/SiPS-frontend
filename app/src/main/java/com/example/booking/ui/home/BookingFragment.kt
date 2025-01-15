@@ -22,22 +22,17 @@ class BookingFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_booking, container, false)
 
-        // Booking inputs
         val orderNameEditText = view.findViewById<EditText>(R.id.orderName)
         val bandNameEditText = view.findViewById<EditText>(R.id.bandName)
         val noteEditText = view.findViewById<EditText>(R.id.note)
         val totalTimeTextBooking = view.findViewById<TextView>(R.id.totalTimeTextBooking)
 
-        // Buttons
         val minusButton = view.findViewById<Button>(R.id.minusButton)
         val plusButton = view.findViewById<Button>(R.id.plusButton)
         val continueButton = view.findViewById<Button>(R.id.continueButton)
 
-        // Initialize total time text
         totalTimeTextBooking.text = totalTime.toString()
 
-        // Minus button click listener
-        
         minusButton.setOnClickListener {
             if (totalTime > 1) {
                 totalTime--
@@ -47,20 +42,17 @@ class BookingFragment : Fragment() {
             }
         }
 
-        // Plus button click listener
         plusButton.setOnClickListener {
             totalTime++
             totalTimeTextBooking.text = totalTime.toString()
         }
 
-        // Continue button click listener
         continueButton.setOnClickListener {
             val orderName = orderNameEditText.text.toString().trim()
             val bandName = bandNameEditText.text.toString().trim()
             val note = noteEditText.text.toString().trim()
 
             if (orderName.isNotEmpty() && bandName.isNotEmpty()) {
-                // Pass data to PaymentFragment using arguments
                 val bundle = Bundle().apply {
                     putString("orderName", orderName)
                     putString("bandName", bandName)

@@ -10,7 +10,6 @@ import com.example.booking.databinding.ActivityLoginBinding
 import com.example.booking.retrofit.ApiConfig
 import com.example.booking.retrofit.LoginRequest
 import com.example.booking.retrofit.LoginResponse
-import com.example.booking.retrofit.RegisterResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -29,11 +29,11 @@
     <string name="enter_your_password">enter your password</string>
     <string name="confirm_password">confirm password</string>
     <string name="jika_ingin_mengganti_password_silahkan_isi_password_baru">jika ingin mengganti password silahkan isi password baru</string>
-    <string name="enter_your_password_again">enter your password again</string>
-    <string name="update_profile">update profile</string>
-    <string name="my">my</string>
-    <string name="profile">profile</string>
+    <string name="enter_your_password_again">Enter Your Password Again</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="my">My</string>
+    <string name="profile">Profile</string>
     <string name="thabidin_gmail_com">thabidin@gmail.com</string>
-    <string name="edit_profile">edit profile</string>
-    <string name="logout">logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="20dp"
+    android:background="@color/white"
     tools:context=".EditProfileActivity">
 
     <LinearLayout
@@ -125,7 +126,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/update_profile"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner"
             android:layout_marginTop="20dp"
             android:id="@+id/btn_update"
             android:stateListAnimator="@null"
