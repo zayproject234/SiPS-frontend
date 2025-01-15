@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.booking.MainActivity
 import com.example.booking.R
+import java.util.UUID
 
 class DoneFragment : Fragment() {
 
@@ -20,14 +21,14 @@ class DoneFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_done, container, false)
 
         // Retrieve arguments with default fallback
-        val transactionId = arguments?.getString("transactionId") ?: "N/A"
+        val transactionId = generateTransactionId()
         val orderName = arguments?.getString("orderName") ?: "N/A"
         val bandName = arguments?.getString("bandName") ?: "N/A"
         val totalTime = arguments?.getString("totalTime") ?: "N/A"
         val totalPayment = arguments?.getString("totalPayment") ?: "N/A"
 
         // Bind views
-        val transactionIdTextView = view.findViewById<TextView>(R.id.transactionIdTextView)
+//        val transactionIdTextView = view.findViewById<TextView>(R.id.transactionIdTextView)
         val orderNameTextView = view.findViewById<TextView>(R.id.orderNameTextView)
         val bandNameTextView = view.findViewById<TextView>(R.id.bandNameTextView)
         val totalTimeTextView = view.findViewById<TextView>(R.id.totalTimeTextView)
@@ -35,7 +36,7 @@ class DoneFragment : Fragment() {
         val finishButton = view.findViewById<Button>(R.id.finishButton)
 
         // Set values dynamically
-        transactionIdTextView.text = transactionId
+//        transactionIdTextView.text = transactionId
         orderNameTextView.text = orderName
         bandNameTextView.text = bandName
         totalTimeTextView.text = totalTime
@@ -47,6 +48,12 @@ class DoneFragment : Fragment() {
             startActivity(intent)
         }
 
+
+
+
         return view
+    }
+    fun generateTransactionId(): String {
+        return UUID.randomUUID().toString()
     }
 }

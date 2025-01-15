@@ -18,9 +18,13 @@ interface ApiServices {
     @Multipart
     @POST("bookings")
     fun booking(
-        @Header("Authorization") token: String, // Add the Authorization header
-        @Part("bookingRequest") bookingRequest: BookingRequest, // Sending the booking data as a JSON in the body
-        @Part paymentProof: MultipartBody.Part // Sending the image file as a multipart part
+        @Header("Authorization") token: String,
+        @Part("userId") userId: Int,
+        @Part("scheduleId") scheduleId: Int,
+        @Part("bandName") bandName: String,
+        @Part("duration") duration: Int,
+        @Part("totalPrice") totalPrice: Int,
+        @Part paymentProof: MultipartBody.Part,
+        @Part("notes") notes: String
     ): Call<BookingResponse>
-
 }

@@ -80,7 +80,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/transactionIdTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,6 +89,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/transactionIdTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="FGT-12383"
@@ -104,7 +105,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/orderNameTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -113,6 +114,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/orderNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ahmad"
@@ -128,7 +130,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/bandNameTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -137,6 +139,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/bandNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="The Bandset"
@@ -152,7 +155,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/totalTimeTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -161,6 +164,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/totalTimeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1 Hours"
@@ -176,7 +180,7 @@
                 android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:id="@+id/totalPaymentTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -186,6 +190,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/totalPaymentTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp100.000"
@@ -197,7 +202,7 @@
 
         <!-- Note -->
         <TextView
-            android:id="@+id/noteEditText"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Note"
@@ -205,6 +210,7 @@
             android:layout_marginBottom="5dp"
             android:textColor="#000000" />
         <EditText
+            android:id="@+id/noteEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F5F5F5"

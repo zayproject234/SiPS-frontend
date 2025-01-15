@@ -6,6 +6,6 @@ data class BookingRequest (
     val bandName: String,
     val duration: Int,
     val totalPrice: String,
-    val paymenProof: String,
+    val paymentProof: String,
     val notes: String
 )

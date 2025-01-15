@@ -94,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
                         sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
 
                         saveToken(responseBody.data?.token)
+                        saveUserId(responseBody.data?.id)
                         navigateToMainActivity()
                         finish()
                     } else {
@@ -121,9 +122,15 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun saveUserId(userId: Int?) {
+        sharedPreferences.edit().putInt("userId", userId ?: -1).apply()
+    }
+
     private fun saveToken(token: String?) {
         if (!token.isNullOrEmpty()) {
             sharedPreferences.edit().putString("authToken", token).apply()
+            Log.d("LoginActivity", "Token saved: $token")
         }
     }
 

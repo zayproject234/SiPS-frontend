@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import kotlin.random.Random
 
 class PaymentFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -39,8 +41,9 @@ class PaymentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(layout.fragment_payment, container, false)
-        val sharedPreferences = requireContext().getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
-        val token = sharedPreferences.getString("auth_token", null)
+        val sharedPreferences = requireContext().getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("authToken", null)
+        val userId = sharedPreferences.getInt("userId", -1)
         val orderName = arguments?.getString("orderName") ?: "Unknown Order"
         val bandName = arguments?.getString("bandName") ?: "Unknown Band"
         val totalTime = arguments?.getInt("totalTime") ?: 1
@@ -58,8 +61,10 @@ class PaymentFragment : Fragment() {
         }
 
         payButton.setOnClickListener {
+            // tampilkan token
+            Log.d("PaymentFragment", "Token: $token")
             if (selectedImageFile != null) {
-                submitPaymentProof(orderName, bandName, totalTime, totalPayment, selectedImageFile!!, token!!)
+                submitPaymentProof(orderName, bandName, totalTime, totalPayment, selectedImageFile!!, token!!, userId)
             } else {
                 Toast.makeText(context, "Please upload a payment proof first", Toast.LENGTH_SHORT).show()
             }
@@ -109,27 +114,39 @@ class PaymentFragment : Fragment() {
         return tempFile
     }
 
-    private fun calculatePayment(totalTime: Int): String {
+    private fun calculatePayment(totalTime: Int): Int {
         val ratePerHour = 100000 // Example rate
-        return "Rp${ratePerHour * totalTime}"
+        return ratePerHour * totalTime
     }
 
-    private fun submitPaymentProof(orderName: String, bandName: String, totalTime: Int, totalPayment: String, file: File, token: String) {
+    private fun submitPaymentProof(
+        orderName: String,
+        bandName: String,
+        totalTime: Int,
+        totalPayment: Int,
+        file: File,
+        token: String,
+        userId: Int
+    ) {
         val apiService = ApiConfig.getApiService()
 
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val paymentProofPart = MultipartBody.Part.createFormData("paymentProof", file.name, requestFile)
-        val bookingRequest = BookingRequest(
-            userId = 1, // Replace with actual user ID
-            scheduleId = 123, // Replace with actual schedule ID
+
+        // Generate random userId and scheduleId
+        val randomUserId = Random.nextInt(1, 1000) // User ID acak antara 1 hingga 1000
+        val randomScheduleId = Random.nextInt(1, 1000) // Schedule ID acak antara 1 hingga 1000
+
+        val call = apiService.booking(
+            token = "Bearer $token",
+            userId = userId,
+            scheduleId = 7,
             bandName = bandName,
             duration = totalTime,
             totalPrice = totalPayment,
-            paymenProof = file.name,
+            paymentProof = paymentProofPart,
             notes = "aaa"
         )
-
-        val call = apiService.booking(token, bookingRequest, paymentProofPart)
 
         call.enqueue(object : Callback<BookingResponse> {
             override fun onResponse(
@@ -141,26 +158,43 @@ class PaymentFragment : Fragment() {
                     if (responseBody != null) {
                         Toast.makeText(
                             requireContext(),
-                            "payment berhasil: ${responseBody.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-//                        findNavController().navigate(R.id.doneFragment)
-                    } else {
-                        Toast.makeText(
-                            requireContext(),
-                            "payment gagal: ${responseBody?.message}",
+                            "Payment berhasil: ${responseBody.message}",
                             Toast.LENGTH_SHORT
                         ).show()
 
+                        // navigate to DoneFragment
+                        val bundle = Bundle().apply {
+                            putString("orderName", orderName)
+                            putString("bandName", bandName)
+                            putString("totalTime", totalTime.toString())
+                            putString("totalPayment", totalPayment.toString())
+                        }
+                        findNavController().navigate(R.id.action_paymentFragment_to_doneFragment, bundle)
+
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "Payment gagal: ${responseBody?.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 } else {
                     Toast.makeText(
                         requireContext(),
-                        "payment eror: ${response.message()}",
+                        "Payment error: ${response.message()}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
             }
+
+//            private fun navigateToDoneFragment(orderName: String, bandName: String, totalTime: String, totalPayment: String) {
+//                val intent = Intent(requireContext(), DoneFragment::class.java)
+//                intent.putExtra("orderName", orderName)
+//                intent.putExtra("bandName", bandName)
+//                intent.putExtra("totalTime", totalTime)
+//                intent.putExtra("totalPayment", totalPayment)
+//                startActivity(intent)
+//            }
 
             override fun onFailure(call: Call<BookingResponse>, t: Throwable) {
                 Toast.makeText(
@@ -170,20 +204,5 @@ class PaymentFragment : Fragment() {
                 ).show()
             }
         })
-
-//        lifecycleScope.launch {
-//            try {
-//                val response = apiService.booking(bookingRequest)
-//                if () {
-//                    findNavController().navigate(R.id.doneFragment)
-//                } else {
-//                    Toast.makeText(context, "Payment submission failed", Toast.LENGTH_SHORT).show()
-//                }
-//            } catch (e: Exception) {
-//                Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-
-
     }
 }
