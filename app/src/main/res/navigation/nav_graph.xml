@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/bookingFragment"
-        android:name="com.example.booking.BookingFragment"
+        android:name="com.example.booking.ui.home.BookingFragment"
         android:label="Booking"
         tools:layout="@layout/fragment_booking" >
         <action
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.booking.PaymentFragment"
+        android:name="com.example.booking.ui.home.PaymentFragment"
         android:label="Payment"
         tools:layout="@layout/fragment_payment" >
         <action
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/doneFragment"
-        android:name="com.example.booking.DoneFragment"
+        android:name="com.example.booking.ui.home.DoneFragment"
         android:label="Done"
         tools:layout="@layout/fragment_done" />
 </navigation>

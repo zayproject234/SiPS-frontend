@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#5C2B06"
+                android:background="@color/main"
                 android:gravity="bottom"
                 android:orientation="vertical"
                 android:padding="20dp">
@@ -47,6 +47,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="The Abidin"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -73,6 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Booking Data"
+                    android:textColor="@color/main"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -81,6 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/black"
                     android:text="Order Name"
                     android:textSize="18sp" />
 
@@ -89,14 +92,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#20402105"
-                    android:padding="10dp"
-                    android:text="ahmad" />
+                    android:textColor="@color/black"
+                    android:hint="nama anda"
+                    android:padding="10dp"/>
 
                 <!-- Band Name -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/black"
                     android:text="Band Name"
                     android:textSize="18sp" />
 
@@ -105,14 +110,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#20402105"
+                    android:textColor="@color/black"
                     android:padding="10dp"
-                    android:text="The Bandset" />
+                    android:hint="band anda" />
 
                 <!-- Note -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/black"
                     android:text="Note"
                     android:textSize="18sp" />
 
@@ -121,8 +128,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#20402105"
+                    android:textColor="@color/black"
                     android:padding="10dp"
-                    android:text="Manis" />
+                    android:hint="catatan"/>
 
                 <!-- Time to Play -->
                 <LinearLayout
@@ -134,6 +142,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="Total Time to Play"
                         android:textSize="18sp" />
 
@@ -143,7 +152,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginHorizontal="12dp"
-                        android:backgroundTint="#BE9168"
+                        android:backgroundTint="@color/third"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
                         android:padding="0dp"
@@ -156,6 +165,7 @@
                         android:id="@+id/totalTimeTextBooking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="1" />
 
                     <!-- Plus Button -->
@@ -164,7 +174,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginHorizontal="12dp"
-                        android:backgroundTint="#BE9168"
+                        android:backgroundTint="@color/third"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
                         android:padding="0dp"
@@ -175,6 +185,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="Hours" />
 
                 </LinearLayout>
@@ -187,7 +198,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:backgroundTint="#402105"
+                android:backgroundTint="@color/main"
                 android:textColor="@color/white"
                 android:text="continue Rp100 000" />
 

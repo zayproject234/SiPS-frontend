@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#5C2B06"
+        android:background="@color/main"
         android:padding="20dp"
         android:gravity="bottom">
 
@@ -38,7 +38,8 @@
                 android:layout_weight="1"
                 android:text="The Abidin"
                 android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
             <!-- Date Time -->
             <TextView
@@ -63,7 +64,7 @@
             android:text="Receipt of Transaction"
             android:textSize="24sp"
             android:layout_marginBottom="20dp"
-            android:textColor="#5C2B06" />
+            android:textColor="@color/main" />
 
         <!-- Transaction Details -->
         <LinearLayout
@@ -79,7 +80,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/transactionIdTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -88,6 +89,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/transactionIdTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="FGT-12383"
@@ -103,7 +105,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/orderNameTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -112,6 +114,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/orderNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ahmad"
@@ -127,7 +130,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/bandNameTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -136,6 +139,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/bandNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="The Bandset"
@@ -151,7 +155,7 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/totalTimeTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -160,6 +164,7 @@
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/totalTimeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1 Hours"
@@ -175,28 +180,29 @@
                 android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:id="@+id/totalPaymentTextView"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Total Payment"
                     android:textSize="18sp"
-                    android:textColor="#5C2B06"
+                    android:textColor="@color/main"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/totalPaymentTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp100.000"
                     android:textSize="18sp"
-                    android:textColor="#5C2B06"
+                    android:textColor="@color/main"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
         <!-- Note -->
         <TextView
-            android:id="@+id/noteEditText"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Note"
@@ -204,6 +210,7 @@
             android:layout_marginBottom="5dp"
             android:textColor="#000000" />
         <EditText
+            android:id="@+id/noteEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F5F5F5"
@@ -222,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:text="Finish"
-        android:backgroundTint="#5C2B06"
+        android:backgroundTint="@color/main"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
 </LinearLayout>

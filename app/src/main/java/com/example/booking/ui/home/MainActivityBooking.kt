@@ -1,18 +1,20 @@
-package com.example.booking
+package com.example.booking.ui.home
 
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.example.booking.LoginActivity
+import com.example.booking.R
 
 
-class MainActivityTest : AppCompatActivity() {
+class MainActivityBooking : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_test)
+        setContentView(R.layout.activity_main_booking)
 
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE)

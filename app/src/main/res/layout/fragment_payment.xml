@@ -11,11 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#5C2B06"
-        android:padding="20dp"
+        android:background="@color/main"
+        android:padding="16dp"
         android:gravity="bottom">
 
-        <!-- "Halo" Text -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,23 +23,22 @@
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp" />
 
-        <!-- Horizontal Layout for User Name and Date -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="bottom">
 
-            <!-- User Name -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="The Abidin"
                 android:textSize="20sp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                />
 
-            <!-- Date Time -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,54 +51,52 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Payment"
                 android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                android:textColor="#000000" />
+                android:textColor="@color/main"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
 
-            <!-- Hourglass Icon -->
             <ImageView
-                android:contentDescription="hourglass_icon"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/hourglass"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp" />
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Hourglass Icon" />
 
-            <!-- Timer Text -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="make payment in time"
+                android:text="Make payment in time"
                 android:textSize="16sp"
+                android:layout_gravity="center"
                 android:textColor="#000000"
-                android:gravity="center"
                 android:layout_marginBottom="8dp" />
 
             <TextView
                 android:id="@+id/countdownText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9 minute 30 seconds"
-                android:textSize="18sp"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_marginBottom="20dp" />
+                android:text="09:30"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:textColor="#FF0000"
+                android:layout_marginBottom="24dp" />
 
-            <!-- Transfer To Section -->
+            <!-- Transfer Details -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Transfer to"
                 android:textSize="18sp"
@@ -111,23 +107,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:padding="8dp"
                 android:background="#F5F5F5"
-                android:padding="5dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:contentDescription="bank_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/bank"
+                    android:contentDescription="Bank Icon"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="00000000000 nan the studio"
+                    android:text="00000000000 - Nan The Studio"
                     android:textSize="16sp"
                     android:textColor="#000000" />
 
@@ -135,15 +131,15 @@
                     android:id="@+id/copyAccountButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="copy"
+                    android:text="Copy"
                     android:textSize="14sp"
                     android:backgroundTint="#00BE9168"
-                    android:textColor="@android:color/black" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            <!-- Bill Amount Section -->
+            <!-- Bill Amount -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bill Amount"
                 android:textSize="18sp"
@@ -154,22 +150,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:padding="8dp"
                 android:background="#F5F5F5"
-                android:padding="5dp"
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:contentDescription="money_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/money"
+                    android:contentDescription="Money Icon"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Rp100 000"
+                    android:text="Rp100,000"
                     android:textSize="16sp"
                     android:textColor="#000000" />
 
@@ -177,19 +173,29 @@
                     android:id="@+id/copyAmountButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="copy"
+                    android:text="Copy"
                     android:textSize="14sp"
                     android:backgroundTint="#00BE9168"
-                    android:textColor="@android:color/black" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
+
+            <!-- Payment Proof -->
+            <ImageView
+                android:id="@+id/proofImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:background="#F5F5F5"
+                android:contentDescription="Payment Proof"
+                android:scaleType="centerCrop" />
 
             <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="24dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="24dp">
 
                 <Button
                     android:id="@+id/uploadProofButton"
@@ -198,7 +204,7 @@
                     android:layout_weight="1"
                     android:text="Upload Proof"
                     android:backgroundTint="#402105"
-                    android:textColor="@android:color/white"
+                    android:textColor="#FFFFFF"
                     android:layout_marginEnd="8dp" />
 
                 <Button
@@ -208,7 +214,7 @@
                     android:layout_weight="1"
                     android:text="Pay"
                     android:backgroundTint="#BE9168"
-                    android:textColor="@android:color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

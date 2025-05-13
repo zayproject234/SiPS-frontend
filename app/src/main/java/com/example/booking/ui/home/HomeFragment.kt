@@ -1,5 +1,6 @@
 package com.example.booking.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,13 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        val buttonNavigate = binding.button
+        buttonNavigate.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivityBooking::class.java)
+            startActivity(intent)
+        }
+
         return root
     }
 

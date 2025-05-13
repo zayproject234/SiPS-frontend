@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -13,7 +14,26 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_history">History</string>
+    <string name="title_profile">Profile</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="fullname">fullname</string>
+    <string name="enter_your_fullname">enter your fullname</string>
+    <string name="email">email</string>
+    <string name="enter_your_email">enter your email</string>
+    <string name="senin_12_des_2024">Senin, 12 Des 2024</string>
+    <string name="booked_history">Booked History</string>
+    <string name="the_abidin">The Abidin</string>
+    <string name="halo">Halo</string>
+    <string name="password">password\n</string>
+    <string name="enter_your_password">enter your password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="jika_ingin_mengganti_password_silahkan_isi_password_baru">jika ingin mengganti password silahkan isi password baru</string>
+    <string name="enter_your_password_again">Enter Your Password Again</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="my">My</string>
+    <string name="profile">Profile</string>
+    <string name="thabidin_gmail_com">thabidin@gmail.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
 </resources>

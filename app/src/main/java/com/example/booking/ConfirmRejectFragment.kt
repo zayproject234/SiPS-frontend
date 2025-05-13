@@ -34,7 +34,7 @@ class ConfirmRejectFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_confirm_reject, container, false)
+        return inflater.inflate(R.layout.fragment_confirm_reject_admin, container, false)
     }
 
     companion object {
