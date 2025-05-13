@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import com.example.booking.BuildConfig
 
 object ApiConfig {
-    private const val BASE_URL = "https://backend-sips.up.railway.app/api/"
+    private const val BASE_URL = "https://backend-sips-uad.up.railway.app/api/"
 
     fun getApiService(): ApiServices {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
