@@ -36,4 +36,11 @@
     <string name="thabidin_gmail_com">thabidin@gmail.com</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="logout">Logout</string>
+    <string-array name="bank_types">
+        <item>Mandiri</item>
+        <item>BRI</item>
+        <item>BCA</item>
+        <item>BNI</item>
+        <item>Other</item>
+    </string-array>
 </resources>
