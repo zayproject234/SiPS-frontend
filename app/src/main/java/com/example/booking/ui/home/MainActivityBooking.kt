@@ -8,7 +8,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.booking.LoginActivity
 import com.example.booking.R
 
-
 class MainActivityBooking : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -16,17 +15,12 @@ class MainActivityBooking : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_booking)
 
-        // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE)
-
-        // Check login status
         if (!sharedPreferences.getBoolean("isLoggedIn", false)) {
-            // Redirect to LoginActivity if not logged in
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
             return
         }
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
