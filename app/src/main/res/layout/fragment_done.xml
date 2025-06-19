@@ -15,7 +15,6 @@
         android:padding="20dp"
         android:gravity="bottom">
 
-        <!-- "Halo" Text -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,14 +23,12 @@
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp" />
 
-        <!-- Horizontal Layout for User Name and Date -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="bottom">
 
-            <!-- User Name -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -41,8 +38,8 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
-            <!-- Date Time -->
             <TextView
+                android:id="@+id/dateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Senin, 12 Des 2024"
@@ -50,14 +47,12 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Receipt Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp">
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,13 +61,11 @@
             android:layout_marginBottom="20dp"
             android:textColor="@color/main" />
 
-        <!-- Transaction Details -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ID Transaction -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +73,6 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -97,7 +89,6 @@
                     android:textColor="#000000" />
             </LinearLayout>
 
-            <!-- Order Name -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +96,6 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -122,7 +112,6 @@
                     android:textColor="#000000" />
             </LinearLayout>
 
-            <!-- Band Name -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +119,6 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -147,7 +135,6 @@
                     android:textColor="#000000" />
             </LinearLayout>
 
-            <!-- Total Time -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,7 +142,6 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -172,7 +158,6 @@
                     android:textColor="#000000" />
             </LinearLayout>
 
-            <!-- Total Payment -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -180,7 +165,6 @@
                 android:layout_marginBottom="20dp">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -200,9 +184,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Note -->
         <TextView
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Note"
@@ -222,7 +204,6 @@
 
     </LinearLayout>
 
-    <!-- Finish Button -->
     <Button
         android:id="@+id/finishButton"
         android:layout_width="match_parent"

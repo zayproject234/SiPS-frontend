@@ -36,10 +36,10 @@
                 android:text="The Abidin"
                 android:textSize="20sp"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/dateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Senin, 12 Des 2024"
@@ -47,7 +47,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -94,7 +93,6 @@
                 android:textColor="#FF0000"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Transfer Details -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,6 +101,33 @@
                 android:textColor="#000000"
                 android:layout_marginBottom="8dp" />
 
+            <!-- Transfer Method Selection -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#F5F5F5"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="8dp" />
+
+                <Spinner
+                    android:id="@+id/bankTypeSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <!-- Bank Account Input -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,13 +144,15 @@
                     android:contentDescription="Bank Icon"
                     android:layout_marginEnd="8dp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/bankAccountEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="00000000000 - Nan The Studio"
+                    android:hint="Enter your bank account"
                     android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:inputType="text" />
 
                 <Button
                     android:id="@+id/copyAccountButton"
@@ -137,7 +164,7 @@
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            <!-- Bill Amount -->
+            <!-- Bill Amount Display -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -162,6 +189,7 @@
                     android:layout_marginEnd="8dp" />
 
                 <TextView
+                    android:id="@+id/amountText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -179,7 +207,6 @@
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            <!-- Payment Proof -->
             <ImageView
                 android:id="@+id/proofImageView"
                 android:layout_width="match_parent"
@@ -189,7 +216,6 @@
                 android:contentDescription="Payment Proof"
                 android:scaleType="centerCrop" />
 
-            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

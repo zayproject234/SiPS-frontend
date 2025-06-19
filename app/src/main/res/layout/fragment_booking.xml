@@ -24,7 +24,6 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- "Halo" Text -->
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
@@ -34,13 +33,11 @@
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
-                <!-- Horizontal Layout for User Name and Date -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- User Name -->
                     <TextView
                         android:id="@+id/userName"
                         android:layout_width="0dp"
@@ -51,7 +48,6 @@
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
-                    <!-- Date Time -->
                     <TextView
                         android:id="@+id/dateTime"
                         android:layout_width="wrap_content"
@@ -59,7 +55,6 @@
                         android:text="Senin, 12 Des 2024"
                         android:textColor="@color/white" />
                 </LinearLayout>
-
             </LinearLayout>
 
             <!-- Form -->
@@ -69,7 +64,6 @@
                 android:orientation="vertical"
                 android:padding="30dp">
 
-                <!-- Title -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,7 +72,6 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <!-- Order Name -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,7 +89,6 @@
                     android:hint="nama anda"
                     android:padding="10dp"/>
 
-                <!-- Band Name -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,7 +106,6 @@
                     android:padding="10dp"
                     android:hint="band anda" />
 
-                <!-- Note -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,12 +123,12 @@
                     android:padding="10dp"
                     android:hint="catatan"/>
 
-                <!-- Time to Play -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -146,7 +137,6 @@
                         android:text="Total Time to Play"
                         android:textSize="18sp" />
 
-                    <!-- Minus Button -->
                     <Button
                         android:id="@+id/minusButton"
                         android:layout_width="30dp"
@@ -160,7 +150,6 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <!-- Hours -->
                     <TextView
                         android:id="@+id/totalTimeTextBooking"
                         android:layout_width="wrap_content"
@@ -168,7 +157,6 @@
                         android:textColor="@color/black"
                         android:text="1" />
 
-                    <!-- Plus Button -->
                     <Button
                         android:id="@+id/plusButton"
                         android:layout_width="30dp"
@@ -187,12 +175,9 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:text="Hours" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
-            <!-- Continue Button -->
             <Button
                 android:id="@+id/continueButton"
                 android:layout_width="match_parent"
@@ -200,9 +185,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:backgroundTint="@color/main"
                 android:textColor="@color/white"
-                android:text="continue Rp100 000" />
-
+                android:text="continue Rp0" />
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
