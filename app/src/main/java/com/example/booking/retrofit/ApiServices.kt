@@ -7,6 +7,7 @@ import retrofit2.http.Header
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.GET
 
 interface ApiServices {
     @POST("register")
@@ -27,4 +28,9 @@ interface ApiServices {
         @Part paymentProof: MultipartBody.Part,
         @Part("notes") notes: String
     ): Call<BookingResponse>
+
+    @GET("bookings")
+    fun getBookings(
+        @Header("Authorization") token: String
+    ): Call<List<DataBooking>>
 }
