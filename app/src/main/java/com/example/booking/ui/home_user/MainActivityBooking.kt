@@ -1,4 +1,4 @@
-package com.example.booking.ui.home
+package com.example.booking.ui.home_user
 
 import android.content.Intent
 import android.content.SharedPreferences

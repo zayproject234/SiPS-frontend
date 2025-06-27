@@ -1,13 +1,13 @@
-package com.example.booking.ui.profile
+package com.example.booking.ui.profile_admin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProfileViewModel : ViewModel() {
+class ProfileAdminViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "my"
+        value = "This is profile_admin Fragment"
     }
     val text: LiveData<String> = _text
 }

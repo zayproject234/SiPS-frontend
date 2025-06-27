@@ -1,9 +1,9 @@
-package com.example.booking.ui.profile
+package com.example.booking.ui.profile_user
 
 import android.net.Uri
 import com.google.gson.annotations.SerializedName
 
-data class ProfileModel(
+data class ProfileUserModel(
     @field:SerializedName("createdAt")
     val createdAt: String? = null,
 

@@ -1,4 +1,4 @@
-package com.example.booking.ui.home
+package com.example.booking.ui.home_user
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.booking.databinding.FragmentHomeBinding
+import com.example.booking.databinding.FragmentHomeUserBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -32,9 +32,9 @@ class ScheduleAdapter : androidx.recyclerview.widget.ListAdapter<com.example.boo
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeUserBinding? = null
     private val binding get() = _binding!!
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var homeUserViewModel: HomeUserViewModel
     private lateinit var scheduleAdapter: ScheduleAdapter
 
     override fun onCreateView(
@@ -42,8 +42,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        _binding = FragmentHomeUserBinding.inflate(inflater, container, false)
+        homeUserViewModel = ViewModelProvider(this)[HomeUserViewModel::class.java]
 
         val sharedPreferences = requireContext().getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
         val userName = sharedPreferences.getString("userName", "User")
@@ -58,11 +58,11 @@ class HomeFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = scheduleAdapter
 
-        homeViewModel.schedules.observe(viewLifecycleOwner) { schedules ->
+        homeUserViewModel.schedules.observe(viewLifecycleOwner) { schedules ->
             scheduleAdapter.submitList(schedules)
         }
 
-        homeViewModel.error.observe(viewLifecycleOwner) { errorMsg ->
+        homeUserViewModel.error.observe(viewLifecycleOwner) { errorMsg ->
             if (errorMsg.isNotEmpty()) {
                 Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show()
             }
@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
 
         // Only fetch schedules if token is available
         if (!authToken.isNullOrEmpty()) {
-            homeViewModel.fetchSchedules(authToken)
+            homeUserViewModel.fetchSchedules(authToken)
         } else {
             Toast.makeText(requireContext(), "No auth token found", Toast.LENGTH_SHORT).show()
         }
