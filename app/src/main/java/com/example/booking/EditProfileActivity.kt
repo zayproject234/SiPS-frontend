@@ -8,18 +8,18 @@ import android.os.Bundle
 import android.provider.MediaStore
 import androidx.activity.result.ActivityResultLauncher
 import com.example.booking.databinding.ActivityEditProfileBinding
-import com.example.booking.ui.profile.ProfileModel
-import com.example.booking.ui.profile.ProfileViewModel
+import com.example.booking.ui.profile_user.ProfileUserModel
+import com.example.booking.ui.profile_user.ProfileUserViewModel
 
 
 class EditProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditProfileBinding
-    private lateinit var profileViewModel: ProfileViewModel
+    private lateinit var profileUserViewModel: ProfileUserViewModel
     private  lateinit var userId : String
     private lateinit var token : String
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
-    private  lateinit var profile : ProfileModel
+    private  lateinit var profile : ProfileUserModel
     private lateinit var loadingDialog: AlertDialog
 
     private var imageUri: Uri? = null

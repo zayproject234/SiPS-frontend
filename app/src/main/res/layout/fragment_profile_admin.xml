@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="@color/white"
-    tools:context=".ui.profile2.ProfileFragment">
+    tools:context=".ui.profile_admin.ProfileAdminFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -21,6 +19,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
+            android:id="@+id/textProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -78,17 +77,18 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_corner"
             android:text="@string/edit_profile"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner"/>
 
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_corner"
             android:text="@string/logout"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner"/>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

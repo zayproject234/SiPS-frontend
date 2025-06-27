@@ -1,4 +1,4 @@
-package com.example.booking.ui.profile
+package com.example.booking.ui.profile_admin
 
 import android.content.Context
 import android.content.Intent
@@ -11,11 +11,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.booking.LoginActivity
-import com.example.booking.databinding.FragmentProfileUserBinding
+import com.example.booking.databinding.FragmentProfileAdminBinding
+import com.example.booking.ui.profile_user.ProfileUserViewModel
 
-class ProfileFragment : Fragment() {
+class ProfileAdminFragment : Fragment() {
 
-    private var _binding: FragmentProfileUserBinding? = null
+    private var _binding: FragmentProfileAdminBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,16 +28,16 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
+        val profileUserViewModel =
+            ViewModelProvider(this).get(ProfileUserViewModel::class.java)
 
-        _binding = FragmentProfileUserBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileAdminBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         sharedPreferences = requireContext().getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
 
         val textView: TextView = binding.textProfile
-        profileViewModel.text.observe(viewLifecycleOwner) {
+        profileUserViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 

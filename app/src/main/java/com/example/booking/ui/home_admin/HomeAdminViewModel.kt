@@ -1,13 +1,13 @@
-package com.example.booking.ui.history
+package com.example.booking.ui.home_admin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HistoryViewModel : ViewModel() {
+class HomeAdminViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Halo"
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 }

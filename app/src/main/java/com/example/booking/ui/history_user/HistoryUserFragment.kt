@@ -1,4 +1,4 @@
-package com.example.booking.ui.history
+package com.example.booking.ui.history_user
 
 import android.content.Context
 import android.graphics.Color
@@ -11,11 +11,11 @@ import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.booking.databinding.FragmentHistoryBinding
+import com.example.booking.databinding.FragmentHistoryUserBinding
 
-class HistoryFragment : Fragment() {
+class HistoryUserFragment : Fragment() {
 
-    private var _binding: FragmentHistoryBinding? = null
+    private var _binding: FragmentHistoryUserBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,10 +24,10 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Initialize ViewModel
-        val historyViewModel = ViewModelProvider(this).get(HistoryViewModel::class.java)
+        val historyUserViewModel = ViewModelProvider(this).get(HistoryUserViewModel::class.java)
 
         // Inflate the layout using View Binding
-        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        _binding = FragmentHistoryUserBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         // Initialize the ListView
@@ -42,7 +42,7 @@ class HistoryFragment : Fragment() {
         binding.listView.adapter = adapter
 
         // Observe ViewModel for other data if necessary
-        historyViewModel.text.observe(viewLifecycleOwner) { text ->
+        historyUserViewModel.text.observe(viewLifecycleOwner) { text ->
             binding.textHistory.text = text
         }
 
