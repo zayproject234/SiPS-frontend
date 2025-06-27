@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@drawable/gitar2">
 
     <!-- Header -->
     <LinearLayout
@@ -64,7 +64,7 @@
             android:text="Receipt of Transaction"
             android:textSize="24sp"
             android:layout_marginBottom="20dp"
-            android:textColor="@color/main" />
+            android:textColor="@color/white" />
 
         <!-- Transaction Details -->
         <LinearLayout
@@ -85,8 +85,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="ID Transaction"
-                    android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/transactionIdTextView"
@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:text="FGT-12383"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!-- Order Name -->
@@ -111,7 +111,7 @@
                     android:layout_weight="1"
                     android:text="Order Name"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/orderNameTextView"
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:text="Ahmad"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!-- Band Name -->
@@ -136,7 +136,7 @@
                     android:layout_weight="1"
                     android:text="Band Name"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/bandNameTextView"
@@ -144,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:text="The Bandset"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!-- Total Time -->
@@ -161,7 +161,7 @@
                     android:layout_weight="1"
                     android:text="Total Time"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalTimeTextView"
@@ -169,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:text="1 Hours"
                     android:textSize="18sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!-- Total Payment -->
@@ -186,7 +186,7 @@
                     android:layout_weight="1"
                     android:text="Total Payment"
                     android:textSize="18sp"
-                    android:textColor="@color/main"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:text="Rp100.000"
                     android:textSize="18sp"
-                    android:textColor="@color/main"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
@@ -208,7 +208,7 @@
             android:text="Note"
             android:textSize="18sp"
             android:layout_marginBottom="5dp"
-            android:textColor="#000000" />
+            android:textColor="@color/white" />
         <EditText
             android:id="@+id/noteEditText"
             android:layout_width="match_parent"
@@ -229,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:text="Finish"
-        android:backgroundTint="@color/main"
-        android:textColor="@android:color/white"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp" />
 </LinearLayout>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDF9"
+    android:background="@drawable/gitar2"
     tools:context=".RegisterActivity">
 
     <!-- Title -->
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:text="Register"
-        android:textColor="@color/main"
+        android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,101 +28,92 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buat akun untuk mulai menjelajahi dunia musik!"
-        android:textColor="@color/main"
+        android:textColor="@color/white"
         android:textSize="14sp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/tvTitleRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Input Username -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilUsernameRegister"
+    <!-- CardView Container -->
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        app:endIconMode="none"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
         app:layout_constraintTop_toBottomOf="@id/tvDescriptionRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintWidth_percent="0.85"
+        app:cardBackgroundColor="@android:color/transparent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUsernameRegister"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <!-- Input Phone -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPhoneRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Phone"
-        app:endIconMode="none"
-        app:layout_constraintTop_toBottomOf="@id/tilUsernameRegister"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+            <!-- Input Username -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColorHint="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPhoneRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <!-- Input Phone -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:textColorHint="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Input Email -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmailRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        app:layout_constraintTop_toBottomOf="@id/tilPhoneRegister"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+            <!-- Input Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColorHint="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPasswordRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <!-- Input Password -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColorHint="@color/white"
+                app:endIconMode="password_toggle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Input Password -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPasswordRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        app:endIconMode="password_toggle"
-        app:layout_constraintTop_toBottomOf="@+id/tilEmailRegister"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+            <!-- Register Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etConfirmPasswordRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/btnRegisterSubmit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:backgroundTint="@color/main"
-        android:textColor="#FFFDF9"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/tilPasswordRegister"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Back to Login -->
     <TextView
@@ -130,11 +121,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sudah punya akun? Login"
-        android:textColor="@color/main"
+        android:textColor="@color/white"
         android:textSize="12sp"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/btnRegisterSubmit"
+        app:layout_constraintTop_toBottomOf="@id/tvDescriptionRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

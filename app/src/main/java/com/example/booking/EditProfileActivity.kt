@@ -13,7 +13,7 @@ import com.example.booking.ui.profile.ProfileViewModel
 
 
 class EditProfileActivity : AppCompatActivity() {
-
+ 
     private lateinit var binding: ActivityEditProfileBinding
     private lateinit var profileViewModel: ProfileViewModel
     private  lateinit var userId : String

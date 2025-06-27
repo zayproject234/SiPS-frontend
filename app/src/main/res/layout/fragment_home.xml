@@ -5,51 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
-    android:background="@color/white">
-
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    android:background="@drawable/gitar2">
 
     <!-- Header -->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/main"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
 
-        <!-- "Halo" Text -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:text="Halo"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
-        <!-- Horizontal Layout for User Name and Date -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- User Name -->
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="0dp"
@@ -58,34 +38,49 @@
                 android:text="The Abidin"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
-            <!-- Date Time -->
             <TextView
                 android:id="@+id/dateTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Senin, 12 Des 2024"
-                android:textColor="@color/white" />
+                android:text="Selasa, 27 Mei 2025"
+                android:textColor="@color/white"/>
         </LinearLayout>
-
     </LinearLayout>
 
+    <!-- Tombol Booking -->
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Booking Now"
-        android:background="@drawable/rounded_corner"
-        android:width="366dp"
-        android:height="57dp"
-        android:textSize="24dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout"/>
 
+    <!-- CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Your Schedule -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -94,25 +89,21 @@
         android:layout_marginTop="28dp"
         android:text="Your Schedule"
         android:textStyle="bold"
-        android:textSize="24dp"
-        android:textColor="@color/main"
+        android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
 
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="405dp"
+        android:layout_width="match_parent"
         android:layout_height="477dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
