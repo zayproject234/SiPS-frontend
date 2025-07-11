@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="@drawable/login_1"
     android:padding="16dp">
 
     <!-- Header -->
@@ -19,19 +19,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Halo\nAdmin"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:background="#4E2600"
+
             android:padding="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Day, DD/MM/YYYY"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:background="#4E2600"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+
             android:padding="8dp" />
     </LinearLayout>
 
@@ -42,7 +42,7 @@
         android:text="History Booking Requests"
         android:textStyle="bold"
         android:textColor="#4E2600"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp" />
 

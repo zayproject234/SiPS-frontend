@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/main"
+    android:background="@drawable/login_1"
     android:padding="20dp"
     android:layout_marginBottom="8dp">
 
@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:text="Booking ID - Senin, 12 Des 2024"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textSize="13dp" />
 
             <TextView
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="09.00 - 12.00"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textSize="24dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="Detail booking"
             android:textAlignment="textEnd"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 
