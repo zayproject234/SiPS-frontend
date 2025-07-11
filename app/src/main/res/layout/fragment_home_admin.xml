@@ -1,12 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_1"
+    android:padding="16dp">
 
-    <!-- fragment_home.xml -->
-    <TextView
-        android:id="@+id/textHome"
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Halo\nThe Abidin"
+            android:textColor="#4E2600"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Senin, 12 Des 2024"
+            android:textColor="#4E2600"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Book Requests Button -->
+    <Button
+        android:id="@+id/btnBookRequests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Book Requests"
+        android:backgroundTint="@color/main"
+        android:textColor="#FFFDF9"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+
+    <!-- Date Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today\n12 Des\n2024"
+                android:backgroundTint="@color/main"
+                android:textColor="#FFFDF9"
+                android:padding="8dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13 Des\n2024"
+                android:backgroundTint="@color/main"
+                android:textColor="#FFFDF9"
+                android:padding="8dp"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 Des\n2024"
+                android:backgroundTint="@color/main"
+                android:textColor="#FFFDF9"
+                android:padding="8dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Booking Now Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Booking Now"
+        android:textColor="#4E2600"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Booking Times -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/slot09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Missed     09.00"
+            android:padding="12dp"
+            android:background="#FF0000"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/slot10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Band Book     10.00"
+            android:padding="12dp"
+            android:background="#FFA500"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/slot11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Missed     11.00"
+            android:padding="12dp"
+            android:background="#FF0000"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/slot12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Band Book     12.00"
+            android:padding="12dp"
+            android:background="#FFA500"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/slot13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available     13.00"
+            android:padding="12dp"
+            android:background="#008000"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/slot14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available     14.00"
+            android:padding="12dp"
+            android:background="#008000"
+            android:textColor="#FFFDF9"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+    </LinearLayout>
+
+</LinearLayout>
