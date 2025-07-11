@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home_user.HomeUserFragment"
-    android:background="@drawable/login_1">
+    android:background="@drawable/gitar2">
 
     <!-- Header -->
     <LinearLayout

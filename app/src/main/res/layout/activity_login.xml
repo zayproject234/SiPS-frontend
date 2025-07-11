@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_1"
+    android:background="@drawable/gitar2"
     tools:context=".LoginActivity">
 
     <!-- Container di tengah (pembungkus semua konten login) -->
@@ -36,6 +36,7 @@
             android:id="@+id/tilUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             android:hint="Username"
             app:endIconMode="none">
 
@@ -56,6 +57,7 @@
             android:id="@+id/tilPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             android:hint="Password"
             app:endIconMode="password_toggle">
 

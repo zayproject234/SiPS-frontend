@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_1"
+    android:background="@drawable/gitar2"
     tools:context=".RegisterActivity">
 
     <!-- Title -->
@@ -40,6 +40,7 @@
         android:id="@+id/tilUsernameRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:hint="Username"
         app:endIconMode="none"
         app:layout_constraintTop_toBottomOf="@id/tvDescriptionRegister"
@@ -59,6 +60,7 @@
         android:id="@+id/tilPhoneRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:hint="Phone"
         app:endIconMode="none"
         app:layout_constraintTop_toBottomOf="@id/tilUsernameRegister"
@@ -78,6 +80,7 @@
         android:id="@+id/tilEmailRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:hint="Email"
         app:layout_constraintTop_toBottomOf="@id/tilPhoneRegister"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +99,7 @@
         android:id="@+id/tilPasswordRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:hint="Password"
         app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/tilEmailRegister"
