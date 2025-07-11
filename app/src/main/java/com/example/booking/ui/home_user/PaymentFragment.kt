@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,10 +41,15 @@ class PaymentFragment : Fragment() {
         val orderName = arguments?.getString("orderName") ?: "Unknown Order"
         val bandName = arguments?.getString("bandName") ?: "Unknown Band"
         val note = arguments?.getString("note") ?: ""
-        val totalTime = arguments?.getInt("totalTime") ?: 1
+//        val totalTime = arguments?.getDouble("totalTime") ?: 1
         val userId = arguments?.getInt("userId") ?: -1
         val token = arguments?.getString("authToken") ?: ""
+        val totalTimeDouble = arguments?.getDouble("totalTime") ?: 1.0
+        val totalTime = totalTimeDouble.toInt() // ⬅️ Fix here
         val totalPayment = calculatePayment(totalTime)
+//        val totalPayment = calculatePayment(totalTime)
+        val scheduleId = 5
+//        val scheduleId = arguments?.getInt("scheduleId", -1) ?: -1
 
         val timerTextView = view.findViewById<TextView>(R.id.countdownText)
         val uploadProofButton = view.findViewById<Button>(R.id.uploadProofButton)
@@ -63,7 +69,7 @@ class PaymentFragment : Fragment() {
         }
 
         // Set bill amount
-        amountText.text = "Rp%,d".format(totalPayment).replace(',', '.')
+        amountText.text = "Rp%,d".format(totalPayment.toInt()).replace(',', '.')
 
         setupCountdownTimer(timerTextView)
 
@@ -80,6 +86,7 @@ class PaymentFragment : Fragment() {
             }
             if (selectedImageFile != null && token.isNotEmpty() && userId != -1) {
                 submitPaymentProof(
+                    scheduleId = scheduleId, // ✅ Pass this
                     orderName, bandName, totalTime, totalPayment,
                     selectedImageFile!!, token, userId, note, selectedBank, bankAccount
                 )
@@ -131,17 +138,18 @@ class PaymentFragment : Fragment() {
         return tempFile
     }
 
-    private fun calculatePayment(totalTime: Int): Int {
-        val ratePerHour = 100000
+    private fun calculatePayment(totalTime: Int): Double {
+        val ratePerHour = 100000.0
         return ratePerHour * totalTime
     }
 
     // Update submitPaymentProof to accept bankType and bankAccount if needed
     private fun submitPaymentProof(
+        scheduleId: Int, // ✅ Add this
         orderName: String,
         bandName: String,
         totalTime: Int,
-        totalPayment: Int,
+        totalPayment: Double,
         file: File,
         token: String,
         userId: Int,
@@ -153,10 +161,17 @@ class PaymentFragment : Fragment() {
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val paymentProofPart = MultipartBody.Part.createFormData("paymentProof", file.name, requestFile)
 
+        Log.d(
+            "PAYMENT_DEBUG",
+            "scheduleId: $scheduleId, userId: $userId, token: $token, bandName: $bandName, note: $note, totalTime: $totalTime, totalPrice: $totalPayment, bank: $bankType, acc: $bankAccount"
+        )
+
+
+
         val call = apiService.booking(
             token = "Bearer $token",
             userId = userId,
-            scheduleId = 7, // TODO: Replace with actual scheduleId if available
+            scheduleId = scheduleId, // TODO: Replace with actual scheduleId if available scheduleId
             bandName = bandName,
             duration = totalTime,
             totalPrice = totalPayment,

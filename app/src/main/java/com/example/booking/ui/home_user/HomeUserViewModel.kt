@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.booking.retrofit.ApiConfig
+import com.example.booking.retrofit.BookingResponse
 import com.example.booking.retrofit.DataBooking
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,19 +20,20 @@ class HomeUserViewModel : ViewModel() {
 
     fun fetchSchedules(token: String) {
         val apiService = ApiConfig.getApiService()
-        apiService.getBookings("Bearer $token").enqueue(object : Callback<List<DataBooking>> {
+        apiService.getBookings("Bearer $token").enqueue(object : Callback<BookingResponse> {
             override fun onResponse(
-                call: Call<List<DataBooking>>,
-                response: Response<List<DataBooking>>
+                call: Call<BookingResponse>,
+                response: Response<BookingResponse>
             ) {
                 if (response.isSuccessful) {
-                    _schedules.value = response.body() ?: listOf()
+                    val bookings = response.body()?.data
+                    _schedules.value = bookings ?: emptyList()
                 } else {
-                    _error.value = "Failed to load schedules"
+                    _error.value = "Failed to load schedules: ${response.message()}"
                 }
             }
 
-            override fun onFailure(call: Call<List<DataBooking>>, t: Throwable) {
+            override fun onFailure(call: Call<BookingResponse>, t: Throwable) {
                 _error.value = "Failed to load schedules: ${t.message}"
             }
         })

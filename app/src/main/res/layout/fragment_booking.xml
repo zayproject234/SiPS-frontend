@@ -77,23 +77,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/black"
-                    android:text="Order Name"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/orderName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#20402105"
-                    android:textColor="@color/black"
-                    android:hint="nama anda"
-                    android:padding="10dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/black"
                     android:text="Band Name"
                     android:textSize="18sp" />
 

@@ -26,7 +26,6 @@ class BookingFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_booking, container, false)
 
-        val orderNameEditText = view.findViewById<EditText>(R.id.orderName)
         val bandNameEditText = view.findViewById<EditText>(R.id.bandName)
         val noteEditText = view.findViewById<EditText>(R.id.note)
         val totalTimeTextBooking = view.findViewById<TextView>(R.id.totalTimeTextBooking)
@@ -60,17 +59,17 @@ class BookingFragment : Fragment() {
         }
 
         continueButton.setOnClickListener {
-            val orderName = orderNameEditText.text.toString().trim()
             val bandName = bandNameEditText.text.toString().trim()
             val note = noteEditText.text.toString().trim()
 
-            if (orderName.isNotEmpty() && bandName.isNotEmpty()) {
+            if (bandName.isNotEmpty()) {
                 val sharedPreferences = requireContext().getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
                 val userId = sharedPreferences.getInt("userId", -1)
                 val authToken = sharedPreferences.getString("authToken", null)
+                val scheduleId = arguments?.getInt("scheduleId", -1) ?: -1
 
                 val bundle = Bundle().apply {
-                    putString("orderName", orderName)
+                    putInt("scheduleId", arguments?.getInt("scheduleId") ?: -1)
                     putString("bandName", bandName)
                     putString("note", note)
                     putInt("totalTime", totalTime)

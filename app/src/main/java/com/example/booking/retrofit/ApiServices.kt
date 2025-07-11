@@ -24,7 +24,7 @@ interface ApiServices {
         @Part("scheduleId") scheduleId: Int,
         @Part("bandName") bandName: String,
         @Part("duration") duration: Int,
-        @Part("totalPrice") totalPrice: Int,
+        @Part("totalPrice") totalPrice: Double,
         @Part paymentProof: MultipartBody.Part,
         @Part("notes") notes: String
     ): Call<BookingResponse>
@@ -32,5 +32,5 @@ interface ApiServices {
     @GET("bookings")
     fun getBookings(
         @Header("Authorization") token: String
-    ): Call<List<DataBooking>>
+    ): Call<BookingResponse>
 }

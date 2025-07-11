@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class BookingResponse(
 	@field:SerializedName("data")
-	val data: List<DataBooking>? = null, // Changed to List
+	val data: List<DataBooking>? = null,
 	@field:SerializedName("message")
 	val message: String? = null,
 	@field:SerializedName("status")
